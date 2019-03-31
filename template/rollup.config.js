@@ -39,7 +39,10 @@ export default [
   },
   {
     input,
-    external: Object.keys(pkg.dependencies),
+    external: [
+      ...Object.keys(pkg.dependencies),
+      ...Object.keys(pkg.peerDependencies)
+    ],
     output: [
       {
         file: pkg.module,
