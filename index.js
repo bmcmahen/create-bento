@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 "use strict";
 
-require("./lib");
+const cli = require("./lib");
+
+cli();
