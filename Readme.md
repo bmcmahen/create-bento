@@ -1,6 +1,6 @@
 # Create Bento
 
-`create-bento` is a simple, somewhat pinionated way to bootstrap a react library built with Typescript and Storybook.
+`create-bento` is a simple, somewhat opinionated way to bootstrap a react library built with Typescript and Storybook. If you'd rather not use storybook or if you prefer regular javascript, I'd recommend using [create-react-library](https://www.npmjs.com/package/create-react-library).
 
 ## Usage
 
