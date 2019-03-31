@@ -1,7 +1,7 @@
 {
-  "name": "bento-box",
+  "name": "bento-builder",
   "version": "1.0.0",
-  "description": "bootstrap your react typscript libraries",
+  "description": "An easy way to bootstrap your react libraries",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
