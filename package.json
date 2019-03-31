@@ -1,7 +1,7 @@
 {
-  "name": "bento-builder",
+  "name": "create-bento",
   "version": "1.0.0",
-  "description": "An easy way to bootstrap your react libraries",
+  "description": "Bootstrap your react libraries with typescript and storybook",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
