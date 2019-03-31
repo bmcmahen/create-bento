@@ -7,7 +7,8 @@
 Currently, `create-bento` requires yarn. Create a new library using the following command:
 
 ```
-yarn create bento my-library-name
+yarn global add create-bento
+create-bento my-project-name
 ```
 
 And then follow the provided instructions to get started working on your library.
