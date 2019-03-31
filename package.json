@@ -1,56 +1,31 @@
 {
   "name": "bento-box",
   "version": "1.0.0",
-  "description": "my personal starter kit for building react components",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "typings": "dist/index.d.ts",
-  "unpkg": "dist/index.umd.js",
+  "description": "bootstrap your react typscript libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmcmahen/bento-box.git"
+  },
   "author": "Ben McMahen <ben.mcmahen@gmail.com>",
   "license": "MIT",
-  "private": false,
-  "scripts": {
-    "test": "jest",
-    "test-watch": "jest -w",
-    "storybook": "start-storybook -p 6006",
-    "build": "rimraf dist && tsc -p tsconfig.json && rollup -c && rimraf compiled",
-    "prepublishOnly": "yarn run build"
+  "bugs": {
+    "url": "https://github.com/bmcmahen/bento-box/issues"
   },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
-    "@storybook/react": "^5.0.5",
-    "@types/jest": "^24.0.11",
-    "@types/storybook__react": "^4.0.1",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^24.5.0",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "jest": "^24.5.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.7.4",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-cleanup": "^3.1.1",
-    "rollup-plugin-commonjs": "^9.2.2",
-    "rollup-plugin-filesize": "^6.0.1",
-    "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "ts-jest": "^24.0.1",
-    "typescript": "^3.4.1",
-    "webpack": "^4.29.6"
-  },
+  "homepage": "https://github.com/bmcmahen/bento-box#readme",
   "dependencies": {
-    "@types/react": "^16.8.10",
-    "@types/react-dom": "^16.8.3"
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "cp-file": "^6.1.0",
+    "execa": "^1.0.0",
+    "globby": "^9.1.0",
+    "handlebars": "^4.1.1",
+    "inquirer": "^6.2.2",
+    "make-dir": "^2.1.0",
+    "ora": "^3.2.0",
+    "p-each-series": "^2.0.0"
   }
 }
