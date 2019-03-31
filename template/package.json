@@ -5,15 +5,18 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
-  "unpkg": "dist/index.umd.js",
   "author": "{{author}}",
   "license": "MIT",
   "private": false,
+  "files": [
+    "dist/",
+    "src/"
+  ],
   "scripts": {
     "test": "jest",
     "test-watch": "jest -w",
     "storybook": "start-storybook -p 6006",
-    "build": "rimraf dist && tsc -p tsconfig.json && rollup -c && rimraf compiled",
+    "build": "rimraf dist rollup -c",
     "prepublishOnly": "yarn run build"
   },
   "peerDependencies": {
@@ -44,6 +47,7 @@
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-filesize": "^6.0.1",
     "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-typescript2": "^0.20.1",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "ts-jest": "^24.0.1",
     "typescript": "^3.4.1",

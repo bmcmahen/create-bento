@@ -2,16 +2,16 @@ import resolve from "rollup-plugin-node-resolve";
 import filesize from "rollup-plugin-filesize";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import pkg from "./package.json";
-import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import cleanup from "rollup-plugin-cleanup";
+import typescript from "rollup-plugin-typescript2";
 
-const input = "compiled/index.js";
+const input = "src/index.ts";
 
 const plugins = [
-  babel(),
-  resolve({
-    extensions: [".js", ".jsx", ".json"]
+  resolve(),
+  typescript({
+    typescript: require("typescript")
   }),
   commonjs(),
   cleanup(),
@@ -22,26 +22,9 @@ const plugins = [
 export default [
   {
     input,
-    external: ["react", "react-dom"],
-    output: [
-      {
-        file: pkg.unpkg,
-        format: "umd",
-        sourcemap: true,
-        name: "pebble",
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM"
-        }
-      }
-    ],
-    plugins
-  },
-  {
-    input,
     external: [
-      ...Object.keys(pkg.dependencies),
-      ...Object.keys(pkg.peerDependencies)
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {})
     ],
     output: [
       {
