@@ -17,7 +17,7 @@
     "test-watch": "jest -w",
     "storybook": "start-storybook -p 6006",
     "build": "rimraf dist && rollup -c",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "{{manager}} run build"
   },
   "peerDependencies": {
     "react": "^16.8.6",

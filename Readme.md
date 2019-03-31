@@ -4,7 +4,7 @@
 
 ## Usage
 
-Currently, `create-bento` requires yarn. Create a new library using the following command:
+Create a new library using the following command:
 
 ```
 yarn global add create-bento
