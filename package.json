@@ -1,6 +1,6 @@
 {
   "name": "create-bento",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Bootstrap your react libraries with typescript and storybook",
   "main": "index.js",
   "bin": "index.js",
