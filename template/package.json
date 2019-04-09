@@ -2,21 +2,26 @@
   "name": "{{name}}",
   "version": "1.0.0",
   "description": "{{description}}",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "typings": "dist/index.d.ts",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "typings": "esm/index.d.ts",
   "author": "{{author}}",
   "license": "MIT",
   "private": false,
   "files": [
-    "dist/",
+    "umd",
+    "cjs",
+    "esm",
     "src/"
   ],
   "scripts": {
     "test": "jest",
     "test-watch": "jest -w",
     "storybook": "start-storybook -p 6006",
-    "build": "rimraf dist && rollup -c",
+    "build-esm": "rimraf esm && tsc",
+    "build-cjs": "rimraf cjs && tsc --module commonjs --outDir cjs",
+    "build-umd": "rimraf umd && rollup -c",
+    "build": "yarn run build-esm && yarn run build-cjs && yarn run build-umd",
     "prepublishOnly": "{{manager}} run build"
   },
   "peerDependencies": {
@@ -47,6 +52,8 @@
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-filesize": "^6.0.1",
     "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
     "rollup-plugin-typescript2": "^0.20.1",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "ts-jest": "^24.0.1",
@@ -54,6 +61,7 @@
     "webpack": "^4.29.6"
   },
   "dependencies": {
+    "tslib": "^1.9.3",
     "@types/react": "^16.8.10",
     "@types/react-dom": "^16.8.3"
   }

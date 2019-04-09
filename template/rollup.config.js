@@ -1,43 +1,47 @@
 import resolve from "rollup-plugin-node-resolve";
 import filesize from "rollup-plugin-filesize";
-import sourceMaps from "rollup-plugin-sourcemaps";
+import { uglify } from "rollup-plugin-uglify";
 import pkg from "./package.json";
 import commonjs from "rollup-plugin-commonjs";
 import cleanup from "rollup-plugin-cleanup";
-import typescript from "rollup-plugin-typescript2";
+import json from "rollup-plugin-json";
 
-const input = "src/index.ts";
+const commonjsOptions = {
+  ignoreGlobal: true,
+  include: /node_modules/
+};
+
+const input = pkg.main;
 
 const plugins = [
   resolve(),
-  typescript({
-    typescript: require("typescript")
-  }),
-  commonjs(),
+  commonjs(commonjsOptions),
+  json(),
   cleanup(),
-  sourceMaps(),
+  uglify(),
   filesize()
 ];
+
+const globals = {
+  react: "React",
+  "react-doc": "ReactDOM"
+};
+
+const capitalize = s => {
+  if (typeof s !== "string") return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
 
 export default [
   {
     input,
-    external: [
-      ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.peerDependencies || {})
-    ],
-    output: [
-      {
-        file: pkg.module,
-        format: "es",
-        sourcemap: true
-      },
-      {
-        file: pkg.main,
-        format: "cjs",
-        sourcemap: true
-      }
-    ],
+    output: {
+      file: "umd/{{name}}.js",
+      format: "umd",
+      name: capitalize("{{name}}"),
+      globals
+    },
+    external: Object.keys(globals),
     plugins
   }
 ];

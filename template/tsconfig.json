@@ -1,29 +1,23 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "esm",
     "esModuleInterop": true,
     "importHelpers": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "target": "esnext",
+    "jsx": "react",
+    "lib": ["es2015", "esnext.asynciterable", "dom"],
     "module": "esnext",
-    "jsx": "preserve",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
+    "target": "es5",
+    "outDir": "esm",
     "skipLibCheck": true,
-    "outDir": "compiled",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "isolatedModules": false,
-    "pretty": true,
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["dom", "es2015", "es2016"]
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false
   },
   "includes": ["src"],
   "exclude": [
@@ -31,7 +25,7 @@
     "dist",
     "stories",
     "tests",
-    "compiled",
+    "esm",
     "src/**/__tests__"
   ]
 }
