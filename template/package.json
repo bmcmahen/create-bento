@@ -8,12 +8,6 @@
   "author": "{{author}}",
   "license": "MIT",
   "private": false,
-  "files": [
-    "umd",
-    "cjs",
-    "esm",
-    "src/"
-  ],
   "scripts": {
     "test": "jest",
     "test-watch": "jest -w",
