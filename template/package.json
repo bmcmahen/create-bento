@@ -13,9 +13,8 @@
     "test-watch": "jest -w",
     "storybook": "start-storybook -p 6006",
     "build-esm": "rimraf esm && tsc",
-    "build-cjs": "rimraf cjs && tsc --module commonjs --outDir cjs",
-    "build-umd": "rimraf umd && rollup -c",
-    "build": "yarn run build-esm && yarn run build-cjs && yarn run build-umd",
+    "build-other": "rimraf umd && rimraf cjs && rollup -c",
+    "build": "yarn run build-esm && yarn run build-other",
     "prepublishOnly": "{{manager}} run build"
   },
   "peerDependencies": {
